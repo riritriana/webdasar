@@ -2,7 +2,6 @@
   box-sizing: border-box;
 }
 /* Styling untuk popup */
-/* Popup */
 .popup {
   display: none; /* Popup tersembunyi secara default */
   position: fixed;
@@ -56,6 +55,28 @@
   color: #007bff; /* Warna ikon saat hover */
 }
 
+/* Media query untuk mobile */
+@media (max-width: 767px) {
+  .popup-content {
+    width: 90%; /* Mengatur lebar popup menjadi 90% di perangkat mobile */
+    padding: 15px; /* Mengurangi padding pada popup di perangkat mobile */
+  }
+
+  .popup-content .close {
+    font-size: 25px; /* Mengurangi ukuran ikon close pada mobile */
+    top: 5px; /* Menyesuaikan posisi ikon close */
+    right: 5px; /* Menyesuaikan posisi ikon close */
+  }
+
+  .social-icons {
+    flex-direction: column; /* Menyusun ikon secara vertikal */
+    gap: 10px; /* Mengurangi jarak antar ikon */
+  }
+
+  .social-icons a {
+    font-size: 18px;  /* Mengurangi ukuran ikon */
+  }
+}
 
 body {
   font-family: "Quicksand", sans-serif;
@@ -69,6 +90,7 @@ h2,
 h3 {
   color: #6f42c1;
 }
+
 
 /* Footer Style */
 footer {
@@ -207,6 +229,53 @@ footer {
   margin: 0;
 }
 
+/* Media query untuk mobile */
+@media (max-width: 767px) {
+  /* Footer container adjustments for mobile */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-contact,
+  .footer-nav,
+  .footer-social {
+    flex: 1;
+    padding: 10px 0;
+  }
+
+  .footer-contact h3,
+  .footer-nav h3,
+  .footer-social h3 {
+    font-size: 16px; /* Reduce header font size */
+  }
+
+  .footer-contact p,
+  .footer-nav a {
+    font-size: 12px; /* Reduce font size for better readability on small screens */
+  }
+
+  .footer-social a {
+    margin-right: 10px; /* Adjust spacing for social media links */
+    font-size: 14px; /* Adjust font size */
+  }
+
+  .footer-newsletter {
+    margin-top: 20px;
+  }
+
+  .footer-newsletter input,
+  .footer-newsletter button {
+    width: 100%; /* Make input and button take full width */
+    font-size: 14px;
+  }
+
+  /* Footer bottom adjustments for mobile */
+  .footer-bottom {
+    font-size: 12px; /* Adjust font size */
+  }
+}
 /* Responsive Design */
 @media (max-width: 768px) {
   .footer-container {
@@ -289,7 +358,20 @@ nav a:hover {
   backdrop-filter: blur(5px); /* Apply a blur effect to the background behind the caption */
 }
 
+/* Media query for mobile devices */
+@media (max-width: 767px) {
+  .jumbotron {
+    font-size: 20px; /* Reduce font size on mobile */
+    padding: 20px 10px; /* Adjust padding for smaller screens */
+    height: auto; /* Allow content to determine height */
+  }
 
+  .caption {
+    max-width: 90%; /* Increase the width of the caption on mobile */
+    font-size: 16px; /* Adjust font size for better readability on mobile */
+    padding: 15px; /* Reduce padding for mobile */
+  }
+}
 
 nav ul {
   display: flex;
