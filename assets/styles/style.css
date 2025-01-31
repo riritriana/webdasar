@@ -1,6 +1,61 @@
 * {
   box-sizing: border-box;
 }
+/* Styling untuk popup */
+/* Popup */
+.popup {
+  display: none; /* Popup tersembunyi secara default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Latar belakang transparan */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Konten popup */
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  width: 500px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  position: relative; /* Membuat positioning untuk child absolute */
+}
+
+/* Ikon close (X) */
+.popup-content .close {
+  position: absolute;  /* Posisi absolute relatif terhadap .popup-content */
+  top: 10px;  /* Jarak dari atas */
+  right: 10px; /* Jarak dari kanan */
+  font-size: 30px; /* Ukuran lebih besar untuk ikon X */
+  cursor: pointer;
+  color: #333; /* Warna default */
+}
+
+.close:hover {
+  color: red; /* Warna saat hover */
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Jarak antar ikon */
+}
+
+.social-icons a {
+  font-size: 20px;  /* Ukuran ikon lebih kecil */
+  color: #fafafa; /* Warna ikon */
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #007bff; /* Warna ikon saat hover */
+}
+
 
 body {
   font-family: "Quicksand", sans-serif;
@@ -15,12 +70,154 @@ h3 {
   color: #6f42c1;
 }
 
+/* Footer Style */
 footer {
   padding: 20px;
   color: white;
-  background-color: #6f42c1;
+  background-color: #6f42c1; /* Warna ungu khas */
   text-align: center;
   font-weight: bold;
+}
+
+/* Footer container for content */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px 0;
+  text-align: left;
+}
+
+/* Informasi Kontak */
+.footer-contact {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.footer-contact h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-contact p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+/* Menu Navigasi */
+.footer-nav {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.footer-nav h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-nav li {
+  margin-bottom: 5px;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
+.footer-nav a:hover {
+  color: #f8f8f8;
+}
+
+/* Tautan Sosial Media */
+.footer-social {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.footer-social h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-social a {
+  margin-right: 15px;
+  color: white;
+}
+
+.footer-social img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Newsletter Form */
+.footer-newsletter {
+  flex: 1;
+}
+
+.footer-newsletter h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-newsletter form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-newsletter input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.footer-newsletter button {
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+  color: #fbfafd; /* Warna ungu yang kontras */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.footer-newsletter button:hover {
+  background-color: #6f42c1;
+  color: white;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  background-color: #6f42c1;
+  padding: 10px 0;
+  font-size: 14px;
+  color: white;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-contact, .footer-nav, .footer-social, .footer-newsletter {
+    margin-bottom: 20px;
+    text-align: center;
+  }
 }
 
 nav a {
@@ -52,13 +249,47 @@ nav a:hover {
   border: 2px solid #6f42c1;
 }
 
+
 .jumbotron {
-  font-size: 20px;
-  padding: 20px;
-  background-color: #6f42c1;
+  font-size: 30px; /* Increase font size */
+  padding: 40px 20px; /* Increase padding to create space between text and images */
+  width: 100vw;
+  height: 100vh;
+  background-image: url("/assets/image/bunga.jpg"); /* Background image */
+  background-size: cover; /* Ensure the image covers the whole background */
+  background-position: center; /* Center the background image */
   text-align: center;
   color: white;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column; /* Arrange elements in a column */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  position: relative; /* To position the overlay */
 }
+
+.jumbotron::before {
+  content: ""; /* Create an empty overlay */
+  position: absolute; /* Position the overlay on top of the background */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Darken the background with a transparent black color */
+  filter: blur(8px); /* Apply blur effect to the background image */
+  z-index: -1; /* Place the overlay behind the text */
+}
+
+.caption {
+  max-width: 80%; /* Optional: limit the width of the caption for better readability */
+  margin-top: 10px; /* Add space between the heading and caption */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  padding: 20px; /* Add some padding around the text */
+  border-radius: 10px; /* Optional: rounded corners for the caption */
+  backdrop-filter: blur(5px); /* Apply a blur effect to the background behind the caption */
+}
+
+
 
 nav ul {
   display: flex;
